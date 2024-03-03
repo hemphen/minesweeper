@@ -1,0 +1,91 @@
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 100%;
+    font-weight: bolder;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+#board {
+    display: flex;
+    justify-content: center;
+    background-color: #f0f0f0;
+}
+
+.cell {
+    width: 24px;
+    max-width: 24px;
+    height: 24px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #ccc;
+    border: 3px solid #ddd;
+}
+
+.cell.hidden {
+    background-color: #f0f0f0;
+    border: none;
+    cursor: default;
+}
+
+.cell.revealed {
+    background-color: #eee;
+}
+
+.cell.mine {
+    background-color: red;
+}
+
+.cell.flag {
+    background-color: yellow;
+}
+
+.row {
+    background-color: transparent;
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    height: 40px
+}
+
+button {
+    margin: 10px;
+    padding: 5px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #449d44;
+}
+
+.cell.mine {
+    background-color: red; /* Keep or remove, depending on visibility preference */
+    background-image: url('../img/bomb.png');
+    background-size: cover; /* This ensures the image covers the whole cell */
+    background-position: center; /* This centers the image in the cell */
+}
+
+.cell.flag {
+    background-color: yellow; /* Keep or remove, depending on visibility preference */
+    background-image: url('../img/flag.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.cell:hover:not(.revealed, .hidden) {
+    background-color: #bbb; /* Slight hover effect for interactive feedback */
+}
